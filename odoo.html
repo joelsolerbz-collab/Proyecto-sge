@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odoo - Sistemas de Gestión Empresarial</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14d940f6b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/recursos/logo.png" alt="Logo SGE" onerror="this.style.display='none'">
+        <h1>SISTEMAS DE GESTIÓN EMPRESARIAL</h1>
+    </header>
+
+    <nav>
+        <div class="menu-button">
+            <p>Menú</p>
+            <button type="button"></button>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">RESUMEN</a></li>
+            <li><a href="que-es-sge.html">SGE</a></li>
+            <li><a href="odoo.html">ODOO</a></li>
+            <li><a href="informes.html">INFORMES</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Odoo</h2>
+        <p>Odoo es un SGE de código abierto que agrupa en una sola plataforma todo lo necesario para gestionar una empresa: ventas, inventario, contabilidad, CRM, recursos humanos y mucho más. Su versión Community es gratuita y funciona tanto en Windows como en Linux.</p>
+
+        <!-- INSTALACIÓN -->
+        <h3>Instalación</h3>
+        <p>El instalador de Odoo Community para Windows se descarga directamente desde su web oficial e incluye PostgreSQL, la base de datos que utiliza internamente, por lo que no es necesario instalarla por separado.</p>
+
+        <img src="./img/capturas/descarga_odoo.png" alt="Formulario de descarga de Odoo 19 Community para Windows desde la web oficial" class="captura">
+
+        <ol>
+            <li>Acceder a <a href="https://www.odoo.com/page/download" target="_blank">odoo.com/page/download</a> y descargar el instalador.</li>
+            <li>Ejecutarlo y recorrer el asistente: seleccionar el idioma, aceptar la licencia (LGPLv3) y mantener el tipo de instalación «All in One».</li>
+            <li>Indicar el usuario y la contraseña de PostgreSQL. Por defecto se crea el usuario <code>openpg</code>.</li>
+            <li>Seleccionar la carpeta de destino (por defecto <code>C:\Program Files\Odoo 19.0</code>).</li>
+            <li>Aguardar a que el proceso finalice; puede llevar varios minutos al instalar también PostgreSQL y sus dependencias.</li>
+            <li>Abrir el navegador y navegar a <code>http://localhost:8069</code> para configurar la primera base de datos.</li>
+        </ol>
+
+        <img src="./img/capturas/instalacion.png" alt="Asistente de instalación de Odoo 19 mostrando la barra de progreso durante la extracción de archivos" class="captura">
+
+        <h3>Crear la base de datos inicial</h3>
+        <p>La primera vez que se accede a <code>http://localhost:8069</code> aparece un formulario donde se deben completar: contraseña maestra, nombre para la base de datos, credenciales del administrador, idioma y país. Se recomienda activar la carga de datos de demostración para poder realizar pruebas desde el primer momento.</p>
+
+        <img src="./img/capturas/crear_bbdd.png" alt="Formulario de creación de la base de datos en Odoo 19 con los campos rellenados: nombre Joel, idioma Spanish/Español y país Spain" class="captura">
+
+        <p>Al confirmar con <em>Create database</em>, Odoo carga el panel principal y el sistema ya está listo para trabajar.</p>
+
+        <!-- ADMINISTRACIÓN -->
+        <h3>Configuración de la empresa</h3>
+        <p>El primer paso tras acceder es actualizar los datos de la organización en <strong>Ajustes → Usuarios y empresas → Empresas</strong>: nombre, dirección fiscal, NIF y logotipo. Esta información aparecerá automáticamente en las facturas y en cualquier documento generado por el sistema.</p>
+
+        <h3>Activación de módulos</h3>
+        <p>De manera predeterminada Odoo arranca con muy pocos módulos habilitados. Para esta práctica se han activado los siguientes:</p>
+        <ul>
+            <li>Facturación</li>
+            <li>Inventario</li>
+            <li>CRM</li>
+            <li>Contactos</li>
+            <li>Ventas</li>
+        </ul>
+
+        <p>Para instalarlos hay que ir a la sección de Aplicaciones, localizar el módulo deseado y pulsar <em>Activar</em>. El propio sistema resuelve las dependencias e instala de forma automática todo lo que cada módulo requiera. Por ejemplo, el módulo <strong>Facturación</strong> se encarga de gestionar las facturas y los pagos, mientras que <strong>Contactos</strong> permite centralizar la libreta de direcciones de la empresa.</p>
+
+        <img src="./img/capturas/apps.png" alt="Pantalla general de Aplicaciones de Odoo 19 mostrando el catálogo completo de módulos disponibles agrupados por categorías" class="captura">
+
+        <img src="./img/capturas/modulo_facturacion.png" alt="Tarjeta del módulo Facturación en la pantalla de Aplicaciones de Odoo con el botón Activar" class="captura">
+
+        <h3>Alta de usuarios</h3>
+        <p>Para registrar nuevas personas en el sistema se accede a <strong>Ajustes → Usuarios y empresas → Usuarios</strong>. Al crear un nuevo registro se introduce el nombre, la dirección de correo (que actuará como identificador de acceso) y los niveles de permiso en cada módulo. Una vez guardado, Odoo envía automáticamente un enlace al correo del usuario para que establezca su propia contraseña.</p>
+
+        <img src="./img/capturas/crear_usuario.png" alt="Ficha del usuario Jony papoy en Odoo con la pestaña Permisos de acceso y rol Usuario seleccionado, con permisos limitados por módulo" class="captura">
+        <img src="./img/capturas/usuario_admin.png" alt="Ficha del usuario Administrator en Odoo con el rol Administrador seleccionado, mostrando permisos completos (Crear, Validar cuenta bancaria, Admin) y la pestaña adicional de Seguridad" class="captura">
+
+        <h3>Copias de seguridad</h3>
+        <p>Desde <code>http://localhost:8069/web/database/manager</code> se administran las bases de datos disponibles: se pueden generar copias en formato .zip, restaurarlas, duplicarlas o eliminarlas. Conviene hacer una copia antes de instalar módulos nuevos o de realizar cambios de cierta envergadura.</p>
+
+        <!-- ACCESO SEGURO -->
+        <h3>Control de acceso</h3>
+        <p>Odoo gestiona la seguridad a través de una combinación de usuarios, grupos y permisos. Cada cuenta tiene sus propias credenciales y pertenece a uno o varios grupos, que son los que determinan qué puede ver y hacer dentro de cada módulo.</p>
+
+        <h3>Categorías de usuario</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Público</td>
+                    <td>Visitantes sin sesión iniciada. Solo acceden a la parte pública del sitio web.</td>
+                </tr>
+                <tr>
+                    <td>Portal</td>
+                    <td>Clientes o proveedores externos. Visualizan únicamente su información: pedidos, facturas, etc.</td>
+                </tr>
+                <tr>
+                    <td>Interno</td>
+                    <td>Empleados de la organización con acceso completo a la interfaz de gestión.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Roles de acceso</h3>
+        <p>En la ficha de cada usuario, dentro de la pestaña <strong>«Access Rights»</strong>, se configura el nivel de acceso. Odoo distingue dos roles principales:</p>
+        <ul>
+            <li><strong>Administrator</strong> — acceso sin restricciones al sistema, incluyendo la configuración técnica.</li>
+            <li><strong>User</strong> — acceso estándar limitado a los módulos y funciones que se le hayan asignado.</li>
+        </ul>
+
+        <p>El rol se modifica desde <strong>Ajustes → Usuarios y empresas → Usuarios</strong>, abriendo el registro correspondiente. En esa misma pestaña se pueden gestionar también los permisos sobre los <em>Master Data</em> y la exportación de información.</p>
+
+        <h3>Reglas de registro</h3>
+        <p>Además de los grupos, existen reglas de registro que filtran qué datos puede consultar cada usuario. Por ejemplo, un comercial con la regla «solo registros propios» únicamente verá las oportunidades en las que figure como responsable. Estas reglas se configuran desde <strong>Ajustes → Técnico → Seguridad → Reglas de registro</strong>, activando previamente el modo desarrollador.</p>
+
+        <h3>Verificación en dos pasos</h3>
+        <p>Cualquier usuario puede habilitar la autenticación en dos pasos desde su perfil. Al activarla, al introducir la contraseña habitual se solicita además un código temporal generado por una aplicación de autenticación como Google Authenticator. Se recomienda activarla como mínimo en la cuenta administradora.</p>
+
+        <h3>Recomendaciones de seguridad</h3>
+        <ul>
+            <li>Activar 2FA en todas las cuentas con permisos elevados.</li>
+            <li>Revisar periódicamente el listado de usuarios y deshabilitar los que ya no estén en uso.</li>
+            <li>Usar contraseñas robustas y distintas para cada cuenta.</li>
+            <li>No compartir credenciales entre varias personas.</li>
+        </ul>
+
+        <a href="informes.html" class="boton">Ver informes</a>
+    </main>
+
+    <footer></footer>
+
+    <button id="subirArriba" onclick="subirArriba()" title="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

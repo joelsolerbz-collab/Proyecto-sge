@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes - Sistemas de Gestión Empresarial</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14d940f6b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/recursos/logo.png" alt="Logo SGE" onerror="this.style.display='none'">
+        <h1>SISTEMAS DE GESTIÓN EMPRESARIAL</h1>
+    </header>
+
+    <nav>
+        <div class="menu-button">
+            <p>Menú</p>
+            <button type="button"></button>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">RESUMEN</a></li>
+            <li><a href="que-es-sge.html">SGE</a></li>
+            <li><a href="odoo.html">ODOO</a></li>
+            <li><a href="informes.html">INFORMES</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Informes y exportación de datos</h2>
+        <p>Odoo incorpora herramientas para obtener información de forma rápida desde prácticamente cualquier módulo. Los resultados pueden presentarse como documentos PDF listos para imprimir o compartir, o bien como vistas interactivas dentro de la propia aplicación para el análisis en tiempo real.</p>
+
+        <h3>Generación de documentos PDF</h3>
+        <p>Desde cualquier registro, como por ejemplo una factura, está disponible el botón <em>Imprimir</em>, que genera un PDF con los datos de la empresa y del destinatario. El diseño visual del documento puede personalizarse desde <strong>Ajustes → Empresas → Configurar diseño del documento</strong>, donde se puede ajustar la plantilla, los colores corporativos y el logotipo.</p>
+
+        <img src="./img/capturas/factura.png" alt="Borrador de una factura de cliente en Odoo con líneas de producto, impuestos e importes totales" class="captura">
+
+        <h3>Vistas Gráfico y Pivot</h3>
+        <p>La mayoría de listados permiten cambiar la vista a Gráfico o Pivot usando los iconos de la barra superior. Son útiles para obtener análisis inmediatos sin necesidad de exportar datos: evolución de ventas por período, facturación agrupada por vendedor, desglose por producto, etc.</p>
+
+        <h3>Exportación de registros</h3>
+        <p>Cualquier listado de Odoo puede exportarse siguiendo el mismo procedimiento en todos los módulos:</p>
+        <ol>
+            <li>Abrir el listado correspondiente (por ejemplo, Contactos o Ventas).</li>
+            <li>Marcar los registros deseados usando la casilla de la cabecera para seleccionar todos.</li>
+            <li>Elegir el formato de salida: XLSX o CSV.</li>
+            <li>Seleccionar los campos que se quieren incluir en el archivo.</li>
+            <li>Hacer clic en <em>Acciones → Exportar</em>.</li>
+            <li>Confirmar con el botón <em>Exportar</em> y guardar el archivo descargado.</li>
+        </ol>
+
+        <img src="./img/capturas/exportar.png" alt="Ventana de configuración de la exportación en Odoo con los campos disponibles a la izquierda y los campos a exportar a la derecha" class="captura">
+        <img src="./img/capturas/acciones_exportar.png" alt="Menú Acciones desplegado en el listado de Contactos con la opción Exportar resaltada" class="captura">
+
+        <p>Si se activa la opción <em>«Quiero actualizar datos (importación-compatible)»</em>, el archivo resultante incluye los identificadores externos necesarios para poder reimportar los registros posteriormente.</p>
+
+        <h3>Otros métodos de acceso a los datos</h3>
+        <ul>
+            <li><strong>Acceso directo a PostgreSQL:</strong> permite realizar consultas SQL sobre la base de datos (solo lectura recomendada).</li>
+            <li><strong>API XML-RPC / JSON-RPC:</strong> posibilita la integración de aplicaciones externas con Odoo mediante llamadas remotas.</li>
+        </ul>
+
+        <a href="index.html" class="boton">Volver al resumen</a>
+    </main>
+
+    <footer></footer>
+
+    <button id="subirArriba" onclick="subirArriba()" title="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
